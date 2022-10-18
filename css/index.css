@@ -49,6 +49,9 @@ table {
 
 * {
     box-sizing: border-box;
+    max-width: 100%;
+    border: 1px solid greenyellow;
+    color: rgb(225, 239, 230);
 }
 
 html {
@@ -84,13 +87,12 @@ p, a {
 }
 
 * {
-    box-sizing: border-box;
-    border: 1px solid black;
-    color: rgb(225, 239, 230);
+    font-size: 3rem;
 }
 
 html {
     font-size: 62.5%;
+    width: 100%;
 }
 
 /* header section */
@@ -103,6 +105,14 @@ header {
     background-repeat: no-repeat;
 }
 
+header div {
+    text-align: center;
+    background: rgba(2, 7, 15, 0.7);
+}
+
+header h1, header nav {
+    padding: 2rem;
+}
 .header-info {
     height: 25%;
     display: flex;
@@ -113,6 +123,7 @@ header {
 }
 h1 {
     height: 33.3%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -120,7 +131,7 @@ h1 {
 
 nav {
     height: 66.6%;
-    width: 70%;
+    width: 110%;
 }
 
 .links {
@@ -157,7 +168,7 @@ a {
 /* gallery section */
 .gallery {
     width: 100%;
-    height: 100vh;
+    height: 181.5vh;
     text-align: center;
     background-color: rgb(0, 4, 17);
     display: flex;
@@ -169,6 +180,14 @@ a {
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 2%;
+}
+
+.image-row {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
 }
 /* about us section */
 .about {
@@ -252,15 +271,33 @@ footer {
     padding-top: 2.5vh;
     display: flex;
     flex-direction: row;
-    height: 20vh;
+    height: 15vh;
     font-size: 3rem;
 }
 
-footer .bottom {
+/* footer .bottom {
     padding: 2%;
     margin-bottom: 1%;
-}
+    height: 100%;
+    width: 100%;
+} */
 
+.nav-Table {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 5%;
+}
+.nav-Table a {
+    padding-left: 5%;
+}
+.footer p {
+    display: flex;
+    justify-content: flex-start;
+}
+div .bottom {
+    display: flex;
+    flex-direction: column;
+}
 footer .bottom button, footer .bottom input {
     color: black;
     height: 3rem;
@@ -284,14 +321,58 @@ footer .navTable nav {
 
 /* mobile media query */
 @media (max-width: 428px) {
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
     /* header section */
-
-    header nav .links {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    header h1 {
+        height: 1%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    header nav .links{
+        background: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        flex-direction: column;
+    }
+    .header-info {
         display: flex;
         flex-direction: column;
-        justify-content: baseline;
+        flex-wrap: wrap;
+        height: 50%;
+        width: 100%;
     }
-    
+    .socials {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        flex-wrap: nowrap;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     /* gallery section */
     .gallery {
@@ -299,20 +380,31 @@ footer .navTable nav {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
     }
     
+    .images, .image-row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0%;
+        margin: 0%;
+    }
+    img {
+        padding-top: 5%;
+    }
     /* about us section */
 
     .about {
-        height: 200vh;
+        height: 225vh;
     }
     
     .about h2 {
         width: 100%;
         padding-top: 5vh;
     }
-    
+
     .about-container .text {
         width: 85%;
     }
@@ -345,9 +437,11 @@ footer .navTable nav {
         height: auto;
         padding-top: 2.5vh;
         font-size: 2rem;
-
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    footer .navTable nav {
+    footer .nav-Table nav {
         margin: 0 auto;
         flex-direction: column;
         justify-content: center;
@@ -358,5 +452,10 @@ footer .navTable nav {
         width: 50%;
         margin: 0 auto;
         text-align: center;
+        flex-direction: row;
+    }
+    .footer-p {
+        display: flex;
+        flex-direction: row;
     }
 }
