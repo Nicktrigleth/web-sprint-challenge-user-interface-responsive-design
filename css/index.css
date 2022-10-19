@@ -133,6 +133,11 @@ nav {
     height: 66.6%;
     width: 110%;
 }
+header div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 .links {
     height: 50%;
